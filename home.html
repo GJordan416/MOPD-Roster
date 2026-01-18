@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mission Oaks Police Department - Officer Roster</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+    }
+
+    header {
+      background-color: #020617;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      color: #cbd5f5;
+      font-size: 0.9rem;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .controls input {
+      padding: 0.6rem 1rem;
+      border-radius: 0.5rem;
+      border: none;
+      width: 250px;
+      font-size: 0.9rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #020617;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    }
+
+    thead {
+      background-color: #1e293b;
+    }
+
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    th {
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #cbd5f5;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #020617;
+    }
+
+    tbody tr:nth-child(odd) {
+      background-color: #020617;
+    }
+
+    tbody tr:hover {
+      background-color: #1e293b;
+    }
+
+    .status-active {
+      color: #22c55e;
+      font-weight: bold;
+    }
+
+    .status-suspension {
+      color: #fbbf24;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.3rem 0.6rem;
+      border-radius: 999px;
+      background-color: #1e293b;
+      font-size: 0.75rem;
+      margin-left: 0.5rem;
+      color: #e2e8f0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mission Oaks Police Department</h1>
+    <p>Official Officer Roster & POST-Compliant Personnel Record System</p>
+  </header>
+
+  <main>
+    <div class="controls">
+      <div>
+        <strong>Officer Roster</strong>
+        <span class="badge">POST Standards & Record Keeping</span>
+      </div>
+      <input type="text" id="searchInput" placeholder="Search by name, rank, or status..." />
+    </div>
+
+    <table id="rosterTable">
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Rank</th>
+          <th>Employment Status</th>
+          <th>POST Certification</th>
+          <th>Disciplinary Record</th>
+          <th>Hire Date</th>
+          <th>Last Training Review</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John Blight</td>
+          <td>Police Officer III</td>
+          <td class="status-active">Active Duty</td>
+          <td>Valid - CA POST Basic</td>
+          <td>None on File</td>
+          <td>01/04/2026</td>
+          <td>01/10/2026</td>
+          <td>Entry-level officer, recently cleared from Field Training. Meets POST baseline standards.</td>
+        </tr>
+        <tr>
+          <td>Atreus Harper</td>
+          <td>Sergeant</td>
+          <td class="status-active">Active Duty (Cleared After Suspension)</td>
+          <td>Valid - CA POST Advanced</td>
+          <td>Suspension Reviewed & Cleared</td>
+          <td>01/05/2026</td>
+          <td>01/10/2026</td>
+          <td>Returned to duty following administrative investigation. Fully cleared for supervisory assignment.</td>
+        </tr>
+        <tr>
+          <td>Brian Diaz</td>
+          <td>Police Officer III</td>
+          <td class="status-active">Active Duty</td>
+          <td>Valid - CA POST Basic</td>
+          <td>None on File</td>
+          <td>01/10/2026</td>
+          <td>01/10/2026</td>
+          <td>Entry-level officer, recently cleared from Field Training. No compliance issues.</td>
+        </tr>
+        <tr>
+          <td>Brayden Caroll</td>
+          <td>Police Officer III</td>
+          <td class="status-active">Active Duty</td>
+          <td>Valid - CA POST Basic</td>
+          <td>None on File</td>
+          <td>01/04/2026</td>
+          <td>01/10/2026</td>
+          <td>Entry-level officer, recently cleared from Field Training. Assigned to patrol operations.</td>
+        </tr>
+        <tr>
+          <td>Mason Barrett</td>
+          <td>Police Officer III</td>
+          <td class="status-suspension">Active - Probationary</td>
+          <td>Provisional - CA POST Basic (In Progress)</td>
+          <td>None on File</td>
+          <td>01/04/2026</td>
+          <td>01/10/2026</td>
+          <td>Currently within probationary period. Pending completion of POST Basic certification.</td>
+        </tr>
+        <tr>
+          <td>Jordan Kingly</td>
+          <td>Police Chief</td>
+          <td class="status-active">Active Duty</td>
+          <td>Valid - CA POST Advanced / INSTRUCTOR</td>
+          <td>None on file</td>
+          <td>01/02/2026</td>
+          <td>01/10/2026</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>Jake Robinson</td>
+          <td>Deputy Chief</td>
+          <td class="status-active">Active Duty</td>
+          <td>Valid - CA POST Advanced / INSTRUCTOR</td>
+          <td>None on file</td>
+          <td>01/02/2026</td>
+          <td>01/10/2026</td>
+          <td>N/A</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <footer>
+      <p>
+        This roster is maintained in accordance with California POST record-keeping
+        requirements and Mission Oaks Police Department policy. Unauthorized
+        modification or distribution is prohibited.
+      </p>
+    </footer>
+  </main>
+
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    const table = document.getElementById("rosterTable");
+    const rows = table.getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+
+    searchInput.addEventListener("keyup", function () {
+      const filter = searchInput.value.toLowerCase();
+
+      for (let i = 0; i < rows.length; i++) {
+        const rowText = rows[i].innerText.toLowerCase();
+        if (rowText.indexOf(filter) > -1) {
+          rows[i].style.display = "";
+        } else {
+          rows[i].style.display = "none";
+        }
+      }
+    });
+  </script>
+</body>
+</html>
